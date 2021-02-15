@@ -9,7 +9,7 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 </p>
 
 # Índice
-* Descripción
+* [Descripción](https://github.com/Chgv99/CIU-Pong#indice)
 * Funcionamiento
   * Toma de decisiones
 * Diseño

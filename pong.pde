@@ -1,6 +1,8 @@
-import processing.sound.*;
-SoundFile hit;
-SoundFile score;
+import gifAnimation.*;
+GifMaker gifExport;    
+//import processing.sound.*;
+//SoundFile hit;
+//SoundFile score;
 
 //ball
 float ball_x, ball_y, ball_rad;
@@ -26,10 +28,16 @@ int score_a = 0;
 int score_b = 0;
 
 void setup() {
-  hit = new SoundFile(this, "Hit11.wav");
-  score = new SoundFile(this, "Hit10.wav");
-  frameRate(200);
   size(750, 500);
+  frameRate(200);
+  gifExport = new GifMaker(this, "final.gif");
+  gifExport.setRepeat(0);        // make it an "endless" animation
+  gifExport.setTransparent(100,100,100);  // black is transparent
+  
+  //hit = new SoundFile(this, "Hit11.wav");
+  //score = new SoundFile(this, "Hit10.wav");
+  
+  
   background(0);
 
   ball_rad = 15;
@@ -43,10 +51,10 @@ void setup() {
   if (prob > 50){
     //Derecha
     ball_speed_x = global_speed;
-    ball_speed_y = round(random(-global_speed, global_speed));
+    ball_speed_y = 0;
   } else {
     ball_speed_x = -global_speed;
-    ball_speed_y = round(random(-global_speed, global_speed));
+    ball_speed_y = 0;
   }
   
   paddle_x = 100;
@@ -118,7 +126,7 @@ void draw() {
     gspeed = global_speed;
     
     //La bola se saca hacia el derecho
-    ball_speed_x = -gspeed;//round(random(-3,3));
+    ball_speed_x = gspeed;//round(random(-3,3));
     score();
     //ball_speed_x = -ball_speed_x;
   }
@@ -132,7 +140,7 @@ void draw() {
     gspeed = global_speed;
     
     //La bola se saca hacia el izquierdo
-    ball_speed_x = gspeed;//round(random(-3,3));
+    ball_speed_x = -gspeed;//round(random(-3,3));
     score();
   }
 
@@ -160,10 +168,17 @@ void draw() {
     ball_speed_x = -abs(gspeed);
     bounce();
   }
+  
+  gifExport.setDelay(0);
+  gifExport.addFrame();
+  
+  if (score_a == 1 || score_b == 1) {
+    gifExport.finish();    
+  }
 }
 
 void bounce(){
-  hit.play();
+  //hit.play();
   //gspeed = gspeed + inc_speed;
   ball_speed_y = round(random(-gspeed, gspeed));
   //a_y = 0;
@@ -171,7 +186,7 @@ void bounce(){
 }
 
 void score(){
-  score.play();
+  //score.play();
   ball_speed_y = round(random(-gspeed, gspeed));
   a_y = height/2;
   b_y = height/2;

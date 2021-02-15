@@ -14,4 +14,11 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
   * Toma de decisiones
 * Diseño
   * Toma de decisiones
-* Muestra (?)
+* Referencias
+
+# Referencias
+* [Processing 3](https://processing.org/)
+* [Processing 3 Reference](https://processing.org/reference/)
+* [Gif Animation Exporting](https://github.com/extrapixel/gif-animation)
+* []()
+* []()

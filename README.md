@@ -9,7 +9,7 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 </p>
 
 # Índice
-* [Descripción](https://github.com/Chgv99/CIU-Pong#descripcion)
+* [Descripción](https://github.com/Chgv99/CIU-Pong#Descripción)
 * [Funcionamiento](https://github.com/Chgv99/CIU-Pong#Funcionamiento)
 * [Diseño](https://github.com/Chgv99/CIU-Pong#Diseño)
 * [Referencias](https://github.com/Chgv99/CIU-Pong#Referencias)
@@ -38,6 +38,8 @@ void draw() {
   }
 }
 ```
+
+# Diseño
 
 # Referencias
 * [Processing 3](https://processing.org/)

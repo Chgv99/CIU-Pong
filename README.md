@@ -209,6 +209,9 @@ void checkPaddleOutOfBounds() {
   }
 }
 ```
+
+Por último, la puntuación del jugador izquierdo está colocada a ojo, dado que el tamaño del texto no coincide con ninguna medida específica en píxeles. Por ello, coloqué primero el contador derecho a 75px del centro (horizontal) y a un cuarto de la altura total de la ventana del borde superior, y luego intenté que el otro contador quedara simétrico. 
+No he implementado un contador dinámico, es decir, uno que se desplace según el número de cifras del número de puntos. Esto quiere decir que a partir de 10 puntos, los contadores se solapan o se descolocan.
 ---
 # Referencias
 * [Processing 3](https://processing.org/)

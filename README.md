@@ -70,6 +70,9 @@ void positionElements() {
 
 ## Detección de colisiones
 
+Las colisiones verticales se resuelven invirtiendo el signo de la componente vertical cuando la pelota toca los bordes.
+
+De las colisiones horizontales, las que incumben a los bordes de la ventana, llevan al reseteo de la posición de la pelota. En cambio, los que tienen que ver con las palas, resultan en la inversión del sentido de la componente horizontal y en otra tirada de los dados para la componente vertical (tal y como se explica en [Aleatoriedad](https://github.com/Chgv99/CIU-Pong#Aleatoriedad)). De esta forma, la partida no es monótona, y obliga a los jugadores a estar más atentos.
 ```processing
 void checkCollisions() {
   checkScoreConditions();

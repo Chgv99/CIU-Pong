@@ -5,7 +5,7 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 *Christian García Viguera. Universidad de Las Palmas de Gran Canaria.*
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/Chgv99/Pong/blob/main/final.gif">
+  <img width="460" height="300" src="https://github.com/Chgv99/Pong/blob/main/preview.gif">
 </p>
 
 # Índice

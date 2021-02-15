@@ -1,12 +1,13 @@
 # Pong
 
-*Hecho por Christian García Viguera para la asignatura Creando Interfaces de Usuario. Universidad de Las Palmas de Gran Canaria.*
+*Hecho por **Christian García Viguera** para la asignatura **Creando Interfaces de Usuario**. Universidad de Las Palmas de Gran Canaria.*
 
+![A game of Pong](https://octodex.github.com/images/yaktocat.png)
 
 # Índice
 * Descripción
 * Funcionamiento
-  * Decisiones
+  * Toma de decisiones
 * Diseño
-  * Decisiones
-* Muestra
+  * Toma de decisiones
+* Muestra (?)

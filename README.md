@@ -9,12 +9,16 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 </p>
 
 # Índice
-* [Descripción](https://github.com/Chgv99/CIU-Pong#Descripción)
 * [Funcionamiento](https://github.com/Chgv99/CIU-Pong#Funcionamiento)
+  * [Aleatoriedad](https://github.com/Chgv99/CIU-Pong#Aleatoriedad)
+  * [Movimiento](https://github.com/Chgv99/CIU-Pong#Movimiento)
+  * [Detección de colisiones](https://github.com/Chgv99/CIU-Pong#Detección-de-colisiones)
+  * [Almacenamiento de puntuación](https://github.com/Chgv99/CIU-Pong#Almacenamiento-de-puntuación)
+  * [Reproducción de sonido](https://github.com/Chgv99/CIU-Pong#Reproducción-de-sonido)
+  * [Detección de entradas por teclado](https://github.com/Chgv99/CIU-Pong#Detección-de-entradas-por-teclado)
 * [Diseño](https://github.com/Chgv99/CIU-Pong#Diseño)
 * [Referencias](https://github.com/Chgv99/CIU-Pong#Referencias)
 ---
-# Descripción
 
 # Funcionamiento
 

@@ -1,8 +1,12 @@
-# Pong
+# CIU-Pong
 
-*Hecho por **Christian García Viguera** para la asignatura **Creando Interfaces de Usuario**. Universidad de Las Palmas de Gran Canaria.*
+CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario** que consiste en reconstruir el juego [Pong](https://es.wikipedia.org/wiki/Pong) en [Processing 3](https://processing.org/).
 
-![A game of Pong](https://octodex.github.com/images/yaktocat.png)
+*Christian García Viguera. Universidad de Las Palmas de Gran Canaria.*
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/Chgv99/Pong/blob/main/final.gif">
+</p>
 
 # Índice
 * Descripción

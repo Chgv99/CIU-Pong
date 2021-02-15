@@ -24,18 +24,21 @@ La práctica explora varios conceptos en Processing:
 * Detección de entradas por teclado
 * Aleatoriedad
 
-Dado que Pong es un juego en el que los reflejos son la habilidad requerida del jugador, es importante escoger una distancia adecuada entre las palas. En mi caso, escogí para la ventana un tamaño de 750x500px, para las palas 16x100px dejando cada una a una distancia de 100(?)
+Primeramente, y dado que Pong es un juego en el que los reflejos son la única habilidad requerida del jugador, es importante escoger una distancia adecuada entre las palas. En mi caso, escogí para la ventana un tamaño de 750x500px y para las palas uno de 16x100px, dejando un espaciado de 100px con los bordes laterales. Esto nos deja con 518px entre las palas... Poco más que el alto de la ventana.
 
+## Movimiento
+La pelota se inicializa en el centro de la pantalla. La partida comienza con un saque aleatorio a la izquierda o a la derecha.
 
 ```processing
-void draw() {
-  render();
-  gifExport.setDelay(0);
-  gifExport.addFrame();
-  
-  if (score_a == 2 || score_b == 2) {
-    gifExport.finish();    
-  }
+//50% de lanzar hacia izquierda, 50% de lanzar hacia derecha
+prob = round(random(100));
+if (prob > 50){
+  //Derecha
+  ball_speed_x = global_speed;
+  ball_speed_y = 0;
+} else {
+  ball_speed_x = -global_speed;
+  ball_speed_y = 0;
 }
 ```
 

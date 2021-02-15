@@ -1,8 +1,8 @@
-import gifAnimation.*;
-GifMaker gifExport;    
-//import processing.sound.*;
-//SoundFile hit;
-//SoundFile score;
+//import gifAnimation.*;
+//GifMaker gifExport;    
+import processing.sound.*;
+SoundFile hit;
+SoundFile score;
 
 //ball
 float ball_x, ball_y, ball_rad;
@@ -19,23 +19,23 @@ int paddle_height = 100;
 
 int prob;
 
-float global_speed = 2;
+float global_speed = 2; //25
 float gspeed;
 float inc_speed = 0.25; //Bola
-int paddle_speed = 3;
+int paddle_speed = 3; //25
 
 int score_a = 0;
 int score_b = 0;
 
 void setup() {
   size(750, 500);
-  frameRate(200);
-  gifExport = new GifMaker(this, "final.gif");
-  gifExport.setRepeat(0);        // make it an "endless" animation
-  gifExport.setTransparent(100,100,100);  // black is transparent
+  frameRate(200); //12
+  //gifExport = new GifMaker(this, "final.gif");
+  //gifExport.setRepeat(0);        // make it an "endless" animation
+  //gifExport.setTransparent(100,100,100);  // black is transparent
   
-  //hit = new SoundFile(this, "Hit11.wav");
-  //score = new SoundFile(this, "Hit10.wav");
+  hit = new SoundFile(this, "Hit11.wav");
+  score = new SoundFile(this, "Hit10.wav");
   
   
   background(0);
@@ -61,11 +61,19 @@ void setup() {
 
   paddle_width = 16;
   paddle_height = 100;
-  
-  gspeed = global_speed;
 }
 
 void draw() {
+  render();
+  //gifExport.setDelay(0);
+  //gifExport.addFrame();
+  
+  //if (score_a == 2 || score_b == 2) {
+    //gifExport.finish();    
+  //}
+}
+
+void render(){
   //background(map(mouseX,0,255,0,width),map(mouseY,0,255,0,height), ball_x);
   background(0);
   stroke(255);
@@ -74,7 +82,9 @@ void draw() {
   textSize(100);
   fill(255);
   text(score_b, (width/2) + 75, height/4);
-  text(score_a, (width/2) - 200, height/4);
+  text(score_a, 
+      (width/2) - 140, //200
+      height/4);
   
   for (int i = 0; i < 10; i++){
     line(width/2, i * 50, width/2, i * 50 + 25);
@@ -123,10 +133,9 @@ void draw() {
     ball_y = height/2;
     
     score_a++;
-    gspeed = global_speed;
     
     //La bola se saca hacia el derecho
-    ball_speed_x = gspeed;//round(random(-3,3));
+    ball_speed_x = global_speed;//round(random(-3,3));
     score();
     //ball_speed_x = -ball_speed_x;
   }
@@ -137,10 +146,9 @@ void draw() {
     ball_y = height/2;
     
     score_b++;
-    gspeed = global_speed;
     
     //La bola se saca hacia el izquierdo
-    ball_speed_x = -gspeed;//round(random(-3,3));
+    ball_speed_x = -global_speed;//round(random(-3,3));
     score();
   }
 
@@ -156,7 +164,7 @@ void draw() {
       (ball_x + ball_rad/2 > paddle_a_center_x - paddle_width) &&
       (ball_y - ball_rad/2 > paddle_a_center_y - paddle_height/2) &&
       (ball_y + ball_rad/2 < paddle_a_center_y + paddle_height/2)) {
-    ball_speed_x = abs(gspeed);
+    ball_speed_x = abs(global_speed);
     bounce();
   }
   
@@ -165,29 +173,22 @@ void draw() {
       (ball_x - ball_rad/2 > paddle_b_center_x - paddle_width) &&
       (ball_y - ball_rad/2 > paddle_b_center_y - paddle_height/2) &&
       (ball_y + ball_rad/2 < paddle_b_center_y + paddle_height/2)) {
-    ball_speed_x = -abs(gspeed);
+    ball_speed_x = -abs(global_speed);
     bounce();
-  }
-  
-  gifExport.setDelay(0);
-  gifExport.addFrame();
-  
-  if (score_a == 1 || score_b == 1) {
-    gifExport.finish();    
   }
 }
 
 void bounce(){
-  //hit.play();
+  hit.play();
   //gspeed = gspeed + inc_speed;
-  ball_speed_y = round(random(-gspeed, gspeed));
+  ball_speed_y = round(random(-global_speed, global_speed));
   //a_y = 0;
   //b_y = 0;
 }
 
 void score(){
-  //score.play();
-  ball_speed_y = round(random(-gspeed, gspeed));
+  score.play();
+  ball_speed_y = 0;
   a_y = height/2;
   b_y = height/2;
 }

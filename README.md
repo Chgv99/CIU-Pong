@@ -205,7 +205,7 @@ void checkPaddleOutOfBounds() {
   }
 }
 ```
-
+---
 # Referencias
 * [Processing 3](https://processing.org/)
 * [Processing 3 Reference](https://processing.org/reference/)

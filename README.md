@@ -16,6 +16,17 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 
 # Descripción
 
+La práctica explora varios conceptos en Processing:
+* Movimiento
+* Detección de colisiones
+* Almacenamiento de puntuación
+* Reproducción de sonido
+* Detección de entradas por teclado
+* Aleatoriedad
+
+Dado que Pong es un juego en el que los reflejos son la habilidad requerida del jugador, es importante escoger una distancia adecuada entre las palas. En mi caso, escogí para la ventana un tamaño de 750x500px, para las palas 16x100px dejando cada una a una distancia de 100(?)
+
+
 ```processing
 void draw() {
   render();

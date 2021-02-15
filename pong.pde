@@ -1,5 +1,6 @@
 import processing.sound.*;
 SoundFile hit;
+SoundFile score;
 
 //ball
 float ball_x, ball_y, ball_rad;
@@ -26,6 +27,7 @@ int score_b = 0;
 
 void setup() {
   hit = new SoundFile(this, "Hit11.wav");
+  score = new SoundFile(this, "Hit10.wav");
   frameRate(200);
   size(750, 500);
   background(0);
@@ -53,10 +55,6 @@ void setup() {
   paddle_height = 100;
   
   gspeed = global_speed;
-}
-
-void keyPressed() {
-  
 }
 
 void draw() {
@@ -165,7 +163,7 @@ void draw() {
 }
 
 void bounce(){
-  hit.loop();
+  hit.play();
   //gspeed = gspeed + inc_speed;
   ball_speed_y = round(random(-gspeed, gspeed));
   //a_y = 0;
@@ -173,6 +171,7 @@ void bounce(){
 }
 
 void score(){
+  score.play();
   ball_speed_y = round(random(-gspeed, gspeed));
   a_y = height/2;
   b_y = height/2;

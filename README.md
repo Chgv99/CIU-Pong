@@ -17,17 +17,17 @@ CIU-Pong es un miniproyecto para la asignatura **Creando Interfaces de Usuario**
 # Descripción
 
 La práctica explora varios conceptos en Processing:
+* Aleatoriedad
 * Movimiento
 * Detección de colisiones
 * Almacenamiento de puntuación
 * Reproducción de sonido
 * Detección de entradas por teclado
-* Aleatoriedad
 
 Primeramente, y dado que Pong es un juego en el que los reflejos son la única habilidad requerida del jugador, es importante escoger una distancia adecuada entre las palas. En mi caso, escogí para la ventana un tamaño de 750x500px y para las palas uno de 16x100px, dejando un espaciado de 100px con los bordes laterales. Esto nos deja con 518px entre las palas... Poco más que el alto de la ventana.
 
-## Movimiento
-La pelota se inicializa en el centro de la pantalla. La partida comienza con un saque aleatorio a la izquierda o a la derecha.
+## Aleatoriedad
+La partida comienza con un saque aleatorio a la izquierda o a la derecha. Esto da a ambos jugadores la misma probabilidad de comenzar con "*ventaja*".
 
 ```processing
 //50% de lanzar hacia izquierda, 50% de lanzar hacia derecha
@@ -41,7 +41,25 @@ if (prob > 50){
   ball_speed_y = 0;
 }
 ```
-
+Además, en cada rebote de la pelota con una pala, se elige al azar de entre *-global_speed* y *global_speed* para la componente vertical de la velocidad de la pelota.
+```processing
+void bounce(){
+  hit.play();
+  ball_speed_y = round(random(-global_speed, global_speed));
+}
+```
+## Movimiento
+La pelota se inicializa en el centro de la pantalla. En cada loop se le suma a sus componentes una cierta cantidad (*ball_speed_x* y *ball_speed_y*), y tras ello se dibujan en pantalla para generar el movimiento. Lo mismo ocurre con las palas.
+```processing
+void positionElements() {
+  ball_x = ball_x + ball_speed_x;
+  ball_y = ball_y + ball_speed_y;
+  
+  circle(ball_x, ball_y, ball_d);
+  rect(paddle_a_x, paddle_a_y - paddle_height/2, paddle_width, paddle_height);
+  rect(paddle_b_x, paddle_b_y - paddle_height/2, paddle_width, paddle_height);
+}
+```
 # Diseño
 
 # Referencias
